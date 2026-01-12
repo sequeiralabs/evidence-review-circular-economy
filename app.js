@@ -533,6 +533,10 @@ function displayPublications(records) {
 
     container.innerHTML = records.map(record => {
         const sourceLabel = getSourceFileLabel(record.source_file);
+        const hasUrl = record.doi || record.url;
+        const abstractClass = hasUrl
+            ? 'text-md-on-surface leading-relaxed mt-3 md:mt-4 md-body-large line-clamp-5'
+            : 'text-md-on-surface leading-relaxed mt-3 md:mt-4 md-body-large';
 
         return `
         <div class="md-card md-state-layer p-6 md:p-8 cursor-pointer">
@@ -548,9 +552,9 @@ function displayPublications(records) {
                 ${sourceLabel ? `<span class="md-chip md-chip-orange">${escapeHtml(sourceLabel)}</span>` : ''}
             </div>
             ${record.authors_joined ? `<div class="mt-2 md:mt-3 text-md-on-surface-variant italic md-body-large mb-2" style="font-weight: 500;">${escapeHtml(record.authors_joined)}</div>` : ''}
-            ${record.abstract ? `<div class="text-md-on-surface leading-relaxed mt-3 md:mt-4 md-body-large line-clamp-5">${escapeHtml(record.abstract)}</div>` : ''}
+            ${record.abstract ? `<div class="${abstractClass}">${escapeHtml(record.abstract)}</div>` : ''}
             <div class="flex gap-2 md:gap-3 flex-wrap items-center md-label-large text-md-on-surface-variant mt-3 md:mt-4">
-                ${(record.doi || record.url) ? `<a href="${escapeHtml(record.url || (record.doi ? `https://doi.org/${record.doi}` : '#'))}" target="_blank" class="text-mcf-red font-medium no-underline hover:opacity-80 transition-opacity duration-200 inline-flex items-center gap-1.5 hover:gap-2 md-state-layer">View Publication →</a>` : ''}
+                ${hasUrl ? `<a href="${escapeHtml(record.url || (record.doi ? `https://doi.org/${record.doi}` : '#'))}" target="_blank" class="text-mcf-red font-medium no-underline hover:opacity-80 transition-opacity duration-200 inline-flex items-center gap-1.5 hover:gap-2 md-state-layer">View Publication →</a>` : ''}
             </div>
         </div>
         `;
