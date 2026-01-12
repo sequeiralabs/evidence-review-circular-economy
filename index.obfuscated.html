@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evidence Review on the Circular Economy in Africa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'mcf-red': '#EB001B',
+                        'mcf-red-container': '#FFDAD6',
+                        'mcf-red-on-container': '#410002',
+                        'mcf-orange': '#FF5F00',
+                        'mcf-orange-container': '#FFDBCA',
+                        'mcf-orange-on-container': '#2E1500',
+                        'mcf-yellow': '#F79E1B',
+                        'mcf-yellow-container': '#FFF4E0',
+                        'mcf-yellow-on-container': '#2E1500',
+                        'mcf-black': '#000000',
+                        'md-surface': '#FEFBFF',
+                        'md-surface-container': '#F3F0F4',
+                        'md-surface-container-high': '#ECE6F0',
+                        'md-on-surface': '#1C1B1F',
+                        'md-on-surface-variant': '#49454F',
+                        'md-outline': '#79747E',
+                        'md-outline-variant': '#CAC4D0',
+                    },
+                    fontFamily: {
+                        'md': ['Roboto', 'Arial', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'md-elevation-1': '0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.2)',
+                        'md-elevation-2': '0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.3)',
+                        'md-elevation-3': '0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 4px 8px 3px rgba(0, 0, 0, 0.15)',
+                        'md-elevation-4': '0px 2px 3px 0px rgba(0, 0, 0, 0.12), 0px 6px 10px 4px rgba(0, 0, 0, 0.15)',
+                        'md-elevation-5': '0px 4px 4px 0px rgba(0, 0, 0, 0.12), 0px 8px 12px 6px rgba(0, 0, 0, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #FEFBFF;
+        }
+
+        /* Material Design 3 Typography */
+        .md-display-large {
+            font-family: 'Roboto', Arial, sans-serif;
+            font-size: 3.5625rem;
+            font-weight: 400;
+            line-height: 4rem;
+            letter-spacing: -0.015625rem;
+        }
+
+        .md-headline-large {
+            font-family: 'Roboto', Arial, sans-serif;
+            font-size: 2rem;
+            font-weight: 400;
+            line-height: 2.5rem;
+            letter-spacing: 0;
+        }
+
+        .md-title-large {
+            font-family: 'Roboto', Arial, sans-serif;
+            font-size: 1.375rem;
+            font-weight: 400;
+            line-height: 1.75rem;
+            letter-spacing: 0;
+        }
+
+        .md-body-large {
+            font-family: 'Roboto', Arial, sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5rem;
+            letter-spacing: 0.03125rem;
+        }
+
+        .md-label-large {
+            font-family: 'Roboto', Arial, sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            line-height: 1.25rem;
+            letter-spacing: 0.00625rem;
+        }
+
+        /* Material Design 3 State Layers */
+        .md-state-layer {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .md-state-layer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: currentColor;
+            opacity: 0;
+            transition: opacity 0.2s cubic-bezier(0.2, 0, 0, 1);
+        }
+
+        .md-state-layer:hover::before {
+            opacity: 0.08;
+        }
+
+        .md-state-layer:active::before {
+            opacity: 0.12;
+        }
+
+        /* Material Design 3 Ripple Effect */
+        .md-ripple {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Material Design 3 Card */
+        .md-card {
+            background-color: #FEFBFF;
+            border-radius: 0.75rem;
+            box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.2s cubic-bezier(0.2, 0, 0, 1);
+        }
+
+        .md-card:hover {
+            box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.13), 0px 1px 1px 0px rgba(0, 0, 0, 0.15), 0px 2px 1px -1px rgba(0, 0, 0, 0.21);
+        }
+
+        /* Material Design 3 Filled Button */
+        .md-filled-button {
+            background-color: #EB001B;
+            color: white;
+            border-radius: 1.25rem;
+            padding: 0.625rem 1.5rem;
+            font-family: 'Roboto', Arial, sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            line-height: 1.25rem;
+            letter-spacing: 0.00625rem;
+            text-transform: uppercase;
+            box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.2s cubic-bezier(0.2, 0, 0, 1), background-color 0.2s cubic-bezier(0.2, 0, 0, 1);
+        }
+
+        .md-filled-button:hover {
+            box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+            background-color: #C20016;
+        }
+
+        .md-filled-button:active {
+            box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Material Design 3 Outlined Text Field */
+        .md-outlined-text-field {
+            background-color: transparent;
+            border: 1px solid #79747E;
+            border-radius: 0.25rem;
+            padding: 1rem;
+            font-family: 'Roboto', Arial, sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.2s cubic-bezier(0.2, 0, 0, 1);
+        }
+
+        .md-outlined-text-field:focus {
+            outline: none;
+            border-color: #EB001B;
+            border-width: 2px;
+            padding: calc(1rem - 1px);
+        }
+
+        /* Material Design 3 Chip */
+        .md-chip {
+            background-color: #EB001B;
+            color: white;
+            border-radius: 0.5rem;
+            padding: 0.375rem 0.75rem;
+            font-family: 'Roboto', Arial, sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        .md-chip-orange {
+            background-color: #FF5F00;
+            color: white;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-md-surface p-4 md:p-6">
+    <div class="max-w-7xl mx-auto bg-md-surface rounded-3xl md-card p-6 md:p-12">
+        <header class="text-center mb-6 md:mb-8">
+            <h1 class="md-headline-large text-md-on-surface mb-4" style="font-weight: 500;">
+                Evidence Review on the Circular Economy in Africa
+            </h1>
+            <p class="md-title-large text-md-on-surface-variant" style="font-weight: 500;">
+                Research publications on the circular economy and waste management in Africa
+            </p>
+        </header>
+
+        <div class="flex gap-3 md:gap-4 items-center mb-6 md:mb-8 flex-wrap">
+            <div id="status" class="px-4 md:px-5 py-2.5 md:py-3 rounded-full font-medium min-w-[180px] md:min-w-[200px] text-xs md:text-sm md-label-large"></div>
+        </div>
+
+        <div class="mb-8">
+            <input type="text" id="searchInput" placeholder="Search publications..." class="w-full md-outlined-text-field md-body-large text-md-on-surface placeholder:text-md-on-surface-variant">
+        </div>
+
+        <div id="stats" class="text-center mb-8 md-body-large text-md-on-surface" style="font-weight: 500;">
+            <span id="recordCount" class="text-mcf-red" style="font-weight: 700;">0</span> publications loaded
+        </div>
+
+        <div id="publications" class="space-y-4">
+            <div class="text-center py-20 px-5 text-md-on-surface-variant md-body-large">
+                <p style="font-weight: 500;">Loading publications...</p>
+            </div>
+        </div>
+
+        <div id="pagination" class="flex justify-center gap-2 mt-10 flex-wrap"></div>
+    </div>
+
+    <!-- Obfuscated JavaScript files -->
+    <script src="publications-data.obfuscated.js"></script>
+    <script src="app.obfuscated.js"></script>
+</body>
+</html>
